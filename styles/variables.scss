@@ -1,0 +1,17 @@
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$breakpoints: (
+  'sm': 'screen and (min-width: #{$sm})',
+  'md': 'screen and (min-width: #{$md})',
+  'lg': 'screen and (min-width: #{$lg})',
+  'xl': 'screen and (min-width: #{$xl})'
+);
+
+@mixin mq($size) {
+  @media #{map-get($breakpoints, $size)} {
+    @content;
+  }
+}
